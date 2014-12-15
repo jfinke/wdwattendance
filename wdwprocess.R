@@ -23,7 +23,8 @@ wdw1993$Total<-NULL # Getting rid of the Total column
 
 wdw1993melted<-melt(wdw1993, id = "Year") # Melting the DF
 
-
+ggplot(data = wdw1993melted, aes(x = Year, y = value, color = variable)) +
+  geom_point()
 
 
 
