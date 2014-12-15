@@ -10,7 +10,9 @@ g <- ggplot(wdw, aes(x=Year, y = Millions, color = Park))
   geom_point(aes(y = EPCOT, col = "Epcot")) +
   geom_point(aes(y = Studios, col = "DHS")) +
   geom_point(aes(y = AK, col = "Animal Kingdom")) +
-  geom_smooth(aes(y = Total, col = "Total"), method="lm")
+  geom_smooth(aes(y = Total, col = "Total"), method="lm") +
+  theme(legend.title = element_text(colour="chocolate", size=16, face="bold"))+
+  scale_color_discrete(name="Parks")
 
 ggsave(file="total.png") # Saving the plot to total.png
 
