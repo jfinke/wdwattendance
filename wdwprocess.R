@@ -24,7 +24,20 @@ wdw1993$Total<-NULL # Getting rid of the Total column
 wdw1993melted<-melt(wdw1993, id = "Year") # Melting the DF
 
 ggplot(data = wdw1993melted, aes(x = Year, y = value, color = variable)) +
-  geom_point()
+  geom_point() +
+  geom_smooth(method = "lm")+
+  theme(legend.title = element_text(colour="chocolate", size=16, face="bold"))+
+  scale_color_discrete(name="Parks")
+
+ggsave(file="1993.png") # Saving it out
+
+ggplot(data = wdw1993melted, aes(x = Year, y = value, color = variable)) +
+  ylab("Millions") +
+  geom_point() + # No linear
+  theme(legend.title = element_text(colour="chocolate", size=16, face="bold"))+
+  scale_color_discrete(name="Parks")
+ggsave(file="1993-2.png") # Saving it out
+
 
 
 
