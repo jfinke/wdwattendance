@@ -9,4 +9,9 @@ g <- ggplot(wdw, aes(x=Year, y = Millions, color = Park))
   geom_point(aes(y = MK, col = "Magic Kingdom")) +
   geom_point(aes(y = EPCOT, col = "Epcot")) +
   geom_point(aes(y = Studios, col = "DHS")) +
-  geom_point(aes(y = AK, col = "Animal Kingdom")) 
+  geom_point(aes(y = AK, col = "Animal Kingdom")) +
+  geom_smooth(aes(y = Total, col = "Total"), method="lm")
+
+ggsave(file="total.png") # Saving the plot to total.png
+
+
